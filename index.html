@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Agenda Inmo">
+<meta name="theme-color" content="#2f6fed">
+<link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAIAAACyr5FlAAADFklEQVR4nO3d0W3cRhRA0XXgCtJI3JlViktLI3EN+bChxLAvsJbI4SN5TgPivLk7H8PF6sNfn/95wK/8cfQDMJc4SOIgiYMkDpI4SOIgiYMkDpI4SOIgiYMkDpI4SOIgiYMkDpI4SOIgiYMkDpI4SOIgiYMkDpI4SOIgiYMkDpI4SOIgiYMkDpI4fvD3lz+PfoRBxPGfb2Xo45U4vvt/E/r4RhyPx69q0MdDHI/uQB8f7vxTk09u/6eXr3s/yUz3PTmePxhue4TcNI7f3e979nHHON620zfs43ZxvGeP79bHveJ4/+7eqo8bxbHVvt6nj7vEse2O3qSPW8Sxx17eoY+LX4It2MJPL1/f8FdOcbF25ZNjzYf7wkfIZeO48J4tc804lLGJC8ahjK1cLQ5lbOhScShjW9eJQxmb+3j0A2xAFjs5/cmhjP2cOw5l7OrEcShjb2eNQxkLnDIOZaxxvjiUsczJ4lDGSmeKQxmLnePLPpfMYv73fU5wclyyjMcZ1jU9jvkTfI/hqxsdx/DZbWLyGufGMXlq2xq70qFxjJ3XTmaud2IcMye1t4GrHhfHwBktM23ts+KYNp31Rk1gyiXYqKFMMOGKbMTJoYyfTZjJ8XFMmMJMh0/m4DgOX/9wx87nyDiU8YwDp3RYHMp43lGzOiYOZfyuQyZ2QBzKeJv1c1t6zyGLTSy7All3cihjK8smuSgOZWxrzTxXxKGMPSyY6u5xKGM/e892you3VzePacL7tlfHv1thLHGQxEESB0kcJHGQxEESB0kcJHGQxEESB+kKv33+pA3fad3k7aCTgyQOkjhI4iCJgyQOkjhI4iCJgyQOkjhI4iCJgyQOkjhI4iCJgyQOkjhI4iCJgyQOkjhI4iCJgyQOkjhI4iCJgyQOkjhI4iCJgyQOkjhI4iCJgyQOkjhI4iCJgyQO0rj/K8scTg6SOEjiIImDJA6SOEjiIImDJA6SOEjiIImDJA6SOEjiIImDJA6SOEjiIImDJA6SOEjiIImDJA6SOEjiIImDJA6SOEjiIImDJA6SOEjiIImD9C/LaZld8YfV1wAAAABJRU5ErkJggg==">
+<link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAIAAACyr5FlAAADFklEQVR4nO3d0W3cRhRA0XXgCtJI3JlViktLI3EN+bChxLAvsJbI4SN5TgPivLk7H8PF6sNfn/95wK/8cfQDMJc4SOIgiYMkDpI4SOIgiYMkDpI4SOIgiYMkDpI4SOIgiYMkDpI4SOIgiYMkDpI4SOIgiYMkDpI4SOIgiYMkDpI4SOIgiYMkDpI4fvD3lz+PfoRBxPGfb2Xo45U4vvt/E/r4RhyPx69q0MdDHI/uQB8f7vxTk09u/6eXr3s/yUz3PTmePxhue4TcNI7f3e979nHHON620zfs43ZxvGeP79bHveJ4/+7eqo8bxbHVvt6nj7vEse2O3qSPW8Sxx17eoY+LX4It2MJPL1/f8FdOcbF25ZNjzYf7wkfIZeO48J4tc804lLGJC8ahjK1cLQ5lbOhScShjW9eJQxmb+3j0A2xAFjs5/cmhjP2cOw5l7OrEcShjb2eNQxkLnDIOZaxxvjiUsczJ4lDGSmeKQxmLnePLPpfMYv73fU5wclyyjMcZ1jU9jvkTfI/hqxsdx/DZbWLyGufGMXlq2xq70qFxjJ3XTmaud2IcMye1t4GrHhfHwBktM23ts+KYNp31Rk1gyiXYqKFMMOGKbMTJoYyfTZjJ8XFMmMJMh0/m4DgOX/9wx87nyDiU8YwDp3RYHMp43lGzOiYOZfyuQyZ2QBzKeJv1c1t6zyGLTSy7All3cihjK8smuSgOZWxrzTxXxKGMPSyY6u5xKGM/e892you3VzePacL7tlfHv1thLHGQxEESB0kcJHGQxEESB0kcJHGQxEESB+kKv33+pA3fad3k7aCTgyQOkjhI4iCJgyQOkjhI4iCJgyQOkjhI4iCJgyQOkjhI4iCJgyQOkjhI4iCJgyQOkjhI4iCJgyQOkjhI4iCJgyQOkjhI4iCJgyQOkjhI4iCJgyQOkjhI4iCJgyQO0rj/K8scTg6SOEjiIImDJA6SOEjiIImDJA6SOEjiIImDJA6SOEjiIImDJA6SOEjiIImDJA6SOEjiIImDJA6SOEjiIImDJA6SOEjiIImDJA6SOEjiIImD9C/LaZld8YfV1wAAAABJRU5ErkJggg==">
+<title>Agenda Inmo</title>
+<style>
+:root{--bg:#f6f7f9;--card:#fff;--tx:#1d2330;--mut:#6b7385;--bd:#dfe3ea;--ac:#2f6fed;--act:#fff;--soft:#e8effd;--dg:#c43d3d;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#14171d;--card:#1c2029;--tx:#e6e9ef;--mut:#9099ab;--bd:#2c3240;--ac:#6b9bff;--act:#0b1220;--soft:#222c44;--dg:#ff7b7b;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#14171d;--card:#1c2029;--tx:#e6e9ef;--mut:#9099ab;--bd:#2c3240;--ac:#6b9bff;--act:#0b1220;--soft:#222c44;--dg:#ff7b7b;color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tx);font:15px/1.45 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+header{display:flex;gap:12px;align-items:center;justify-content:space-between;flex-wrap:wrap;padding:14px 18px;border-bottom:1px solid var(--bd);background:var(--card)}
+h1{font-size:18px;margin:0}
+nav{display:flex;gap:6px}
+button,input,select,textarea{font:inherit;color:var(--tx)}
+button{background:var(--card);border:1px solid var(--bd);border-radius:8px;padding:7px 12px;cursor:pointer}
+button.p,nav button.on{background:var(--ac);color:var(--act);border-color:var(--ac)}
+button.d{color:var(--dg)}
+input,select,textarea{font-size:16px;width:100%;background:var(--bg);border:1px solid var(--bd);border-radius:8px;padding:8px 10px}
+textarea{resize:vertical;min-height:60px}
+main{max-width:1050px;margin:0 auto;padding:16px}
+.grid{display:grid;grid-template-columns:320px 1fr;gap:16px}
+@media (max-width:760px){.grid{grid-template-columns:1fr}}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:12px;padding:14px}
+.row{display:flex;gap:8px;margin-bottom:10px}
+.item{padding:9px 10px;border-radius:8px;cursor:pointer;border:1px solid transparent}
+.item:hover{background:var(--soft)}
+.item.sel{background:var(--soft);border-color:var(--ac)}
+.item small,.mut{color:var(--mut)}
+.f{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px}
+@media (max-width:520px){.f{grid-template-columns:1fr}}
+label{font-size:12px;color:var(--mut);display:block;margin-bottom:3px}
+h2{font-size:16px;margin:14px 0 8px}
+.cm{border-left:3px solid var(--ac);padding:4px 10px;margin:8px 0;background:var(--bg);border-radius:0 8px 8px 0}
+.cal{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;margin-top:10px}
+.dh{text-align:center;font-size:12px;color:var(--mut)}
+.day{min-height:62px;border:1px solid var(--bd);border-radius:8px;padding:4px;cursor:pointer;font-size:12px;overflow:hidden}
+.day.o{opacity:.4}.day.t{border-color:var(--ac)}.day.sel{background:var(--soft)}
+.ev{background:var(--ac);color:var(--act);border-radius:4px;padding:0 4px;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-size:11px}
+.bar{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.warn{background:var(--soft);padding:8px 12px;border-radius:8px;margin-bottom:12px;font-size:13px}
+.bg{font-size:11px;border-radius:10px;padding:1px 8px;background:var(--soft);margin-left:4px;color:var(--ac)}
+.tg{display:inline-block;font-size:11px;border:1px solid var(--bd);border-radius:10px;padding:0 7px;margin:4px 4px 0 0;color:var(--mut)}
+.late{color:var(--dg)}
+footer{text-align:center;color:var(--mut);font-size:12px;padding:18px}
+.empty{color:var(--mut);padding:18px;text-align:center}
+</style>
+</head>
+<body>
+<header>
+  <h1>🏠 Agenda inmobiliaria</h1>
+  <nav><button id="tc" class="on">Clientes</button><button id="tp">Inmuebles</button><button id="tk">Calendario</button><button id="tr">Recordatorios <span id="bd"></span></button></nav>
+</header>
+<main>
+  <div id="app"></div>
+</main>
+<footer><p>Los datos se guardan solo en este dispositivo. Haz copias de seguridad de vez en cuando.</p><button id="bx">Exportar copia</button> <button id="bi">Importar copia</button><input type="file" id="bf" accept="application/json" hidden><p>Creado por Álvaro Valverde Verdugo</p></footer>
+<script>
+const $=s=>document.querySelector(s);
+const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const S={clients:[],events:[],view:"c",sel:null,q:"",month:new Date(),day:null,newC:false,st:"",props:[],pv:null,newP:false,ps:"",pq:""};
+S.month.setDate(1);
+const ST={nuevo:"Nuevo contacto",visitas:"En visitas",negociacion:"Negociación",reserva:"Reserva",cerrado:"Cerrado",perdido:"Perdido"};
+const TP={comprador:"Comprador",vendedor:"Vendedor",inquilino:"Inquilino",propietario:"Propietario (alquiler)",inversor:"Inversor"};
+const KI={c:"🏠",l:"📞",f:"✍️",r:"🔔"};
+const uid=()=>Date.now().toString(36)+Math.random().toString(36).slice(2,6);
+const iso=d=>d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0");
+
+const KEY="agenda-inmobiliaria-v1";
+function load(){try{const d=JSON.parse(localStorage.getItem(KEY)||"{}");S.clients=d.clients||[];S.events=d.events||[];S.props=d.props||[];}catch(e){}}
+function persist(){try{localStorage.setItem(KEY,JSON.stringify({clients:S.clients,events:S.events,props:S.props}));}catch(e){alert("No se pudo guardar en este navegador. Exporta una copia de seguridad.");}}
+async function save(col,item){const arr=S[col];const i=arr.findIndex(x=>x.id===item.id);if(i>=0)arr[i]=item;else arr.push(item);persist();render();}
+async function del(col,id){S[col]=S[col].filter(x=>x.id!==id);persist();render();}
+
+function render(){
+  $("#tc").className=S.view==="c"?"on":"";$("#tk").className=S.view==="k"?"on":"";$("#tr").className=S.view==="r"?"on":"";$("#tp").className=S.view==="p"?"on":"";
+  const nb=S.events.filter(e=>!e.done&&e.date<=iso(new Date())).length;$("#bd").textContent=nb?"("+nb+")":"";
+  const keep=document.activeElement&&document.activeElement.id==="q"?document.activeElement.selectionStart:null;
+  if(S.view==="c")renderClients();else if(S.view==="p")renderProps();else if(S.view==="k")renderCal();else renderRem();
+  if(keep!==null){const q=$("#q");if(q){q.focus();q.setSelectionRange(keep,keep);}}
+}
+
+function renderClients(){
+  const q=S.q.toLowerCase();
+  const list=S.clients.filter(c=>(!S.st||(c.status||"nuevo")===S.st)&&[c.name,c.company,c.email,c.phone,c.notes,(c.tags||[]).join(" "),c.zona,c.ref,TP[c.tipo],(c.comments||[]).map(x=>x.text).join(" ")].join(" ").toLowerCase().includes(q))
+    .sort((a,b)=>(a.name||"").localeCompare(b.name||""));
+  const c=S.newC?{id:uid(),name:"",company:"",email:"",phone:"",notes:"",comments:[]}:S.clients.find(x=>x.id===S.sel);
+  $("#app").innerHTML=`<div class="grid">
+   <div class="card"><div class="row"><input id="q" placeholder="Buscar cliente, empresa, comentario…" value="${esc(S.q)}"><button class="p" id="nw">+ Nuevo</button></div>
+   <div class="row"><select id="sf"><option value="">Todos los estados</option>${Object.entries(ST).map(([k,v])=>`<option value="${k}" ${S.st===k?"selected":""}>${v}</option>`).join("")}</select></div>
+   ${list.length?list.map(x=>`<div class="item ${x.id===S.sel&&!S.newC?"sel":""}" data-id="${esc(x.id)}"><b>${esc(x.name)||"Sin nombre"}</b><span class="bg">${ST[x.status]||ST.nuevo}</span><br><small>${esc(TP[x.tipo]||"")}${x.zona?" · "+esc(x.zona):""}${x.presu?" · "+esc(x.presu)+" €":""}</small><br>${(x.tags||[]).map(t=>`<span class="tg">${esc(t)}</span>`).join("")}</div>`).join(""):`<div class="empty">${S.clients.length?"Sin resultados.":"Aún no hay clientes. Pulsa «+ Nuevo»."}</div>`}</div>
+   <div class="card">${c?detail(c):`<div class="empty">Selecciona un cliente o crea uno nuevo.</div>`}</div></div>`;
+  $("#q").oninput=e=>{S.q=e.target.value;render();};
+  $("#nw").onclick=()=>{S.newC=true;S.sel=null;render();};
+  $("#sf").onchange=e=>{S.st=e.target.value;render();};
+  document.querySelectorAll(".item").forEach(e=>e.onclick=()=>{S.sel=e.dataset.id;S.newC=false;render();});
+  if(c)bindDetail(c);
+}
+function detail(c){
+  const evs=S.events.filter(e=>e.clientId===c.id).sort((a,b)=>(a.date+a.time).localeCompare(b.date+b.time));
+  return `<div class="f">
+    <div><label>Nombre</label><input id="fn" value="${esc(c.name)}"></div>
+    <div><label>Empresa</label><input id="fc" value="${esc(c.company)}"></div>
+    <div><label>Email</label><input id="fe" type="email" value="${esc(c.email)}"></div>
+    <div><label>Teléfono</label><input id="fp" value="${esc(c.phone)}"></div>
+    <div><label>Estado</label><select id="fs">${Object.entries(ST).map(([k,v])=>`<option value="${k}" ${(c.status||"nuevo")===k?"selected":""}>${v}</option>`).join("")}</select></div>
+    <div><label>Etiquetas (separadas por comas)</label><input id="ft" placeholder="Ej.: urgente, con hipoteca, 3 hab." value="${esc((c.tags||[]).join(", "))}"></div>
+    <div><label>Tipo de cliente</label><select id="fk">${Object.entries(TP).map(([k,v])=>`<option value="${k}" ${c.tipo===k?"selected":""}>${v}</option>`).join("")}</select></div>
+    <div><label>Presupuesto / precio (€)</label><input id="fb" inputmode="numeric" value="${esc(c.presu)}"></div>
+    <div><label>Zona de interés</label><input id="fz" value="${esc(c.zona)}"></div>
+    <div><label>Inmueble / referencia</label><input id="fr" value="${esc(c.ref)}"></div></div>
+    <label>Notas generales</label><textarea id="fo">${esc(c.notes)}</textarea>
+    <div class="row" style="margin-top:10px"><button class="p" id="sv">${S.newC?"Crear cliente":"Guardar cambios"}</button>${S.newC?"":`<button class="d" id="dl">Eliminar</button>`}</div>
+    ${S.newC?"":`<h2>Comentarios</h2>
+    <div class="row"><input id="cm" placeholder="Añadir comentario…"><button id="ac">Añadir</button></div>
+    ${(c.comments||[]).slice().reverse().map(m=>`<div class="cm">${esc(m.text)}<br><small class="mut">${esc(new Date(m.at).toLocaleString("es-ES"))}</small></div>`).join("")||`<div class="mut">Sin comentarios todavía.</div>`}
+    <h2>Citas con este cliente</h2>
+    ${evs.map(e=>`<div>📅 ${esc(e.date)} ${esc(e.time)} — ${esc(e.title)}</div>`).join("")||`<div class="mut">Ninguna cita. Añádelas desde el calendario.</div>`}
+    <h2>Inmuebles que podrían encajar</h2>
+    ${S.props.filter(p=>direct(c,p)||match(c,p)).map(p=>`<div class="item" data-gp="${esc(p.id)}">🏠 <b>${esc(p.ref||p.addr)}</b>${p.ref&&p.addr?" · "+esc(p.addr):""}${p.price?" · "+esc(p.price)+" €":""}</div>`).join("")||`<div class="mut">Ninguno por ahora. Rellena tipo, zona y presupuesto para ver coincidencias.</div>`}`}`;
+}
+function bindDetail(c){
+  $("#sv").onclick=async()=>{
+    const n=$("#fn").value.trim();if(!n){alert("El nombre es obligatorio.");return;}
+    const item={...c,name:n,company:$("#fc").value.trim(),email:$("#fe").value.trim(),phone:$("#fp").value.trim(),notes:$("#fo").value,status:$("#fs").value,tipo:$("#fk").value,presu:$("#fb").value.trim(),zona:$("#fz").value.trim(),ref:$("#fr").value.trim(),tags:$("#ft").value.split(",").map(t=>t.trim()).filter(Boolean)};
+    S.sel=item.id;S.newC=false;await save("clients",item);
+  };
+  document.querySelectorAll("[data-gp]").forEach(e=>e.onclick=()=>{S.view="p";S.pv=e.dataset.gp;S.newP=false;render();});
+  if($("#dl"))$("#dl").onclick=async()=>{if(confirm("¿Eliminar este cliente?")){const id=c.id;S.sel=null;await del("clients",id);}};
+  if($("#ac"))$("#ac").onclick=async()=>{
+    const t=$("#cm").value.trim();if(!t)return;
+    await save("clients",{...c,comments:[...(c.comments||[]),{text:t,at:Date.now()}]});
+  };
+}
+
+function renderCal(){
+  const y=S.month.getFullYear(),m=S.month.getMonth();
+  const first=new Date(y,m,1),off=(first.getDay()+6)%7,start=new Date(y,m,1-off);
+  const today=iso(new Date());
+  let cells="";
+  for(let i=0;i<42;i++){
+    const d=new Date(start);d.setDate(start.getDate()+i);const k=iso(d);
+    const ev=S.events.filter(e=>e.date===k).sort((a,b)=>a.time.localeCompare(b.time));
+    cells+=`<div class="day ${d.getMonth()!==m?"o":""} ${k===today?"t":""} ${k===S.day?"sel":""}" data-d="${k}">${d.getDate()}${ev.slice(0,2).map(e=>`<div class="ev">${esc(e.time)} ${esc(e.title)}</div>`).join("")}${ev.length>2?`<div class="mut">+${ev.length-2} más</div>`:""}</div>`;
+  }
+  const dayEv=S.day?S.events.filter(e=>e.date===S.day).sort((a,b)=>a.time.localeCompare(b.time)):[];
+  $("#app").innerHTML=`<div class="card"><div class="bar"><button id="pv">←</button><b>${esc(S.month.toLocaleDateString("es-ES",{month:"long",year:"numeric"}))}</b><button id="nx">→</button></div>
+   <div class="cal">${["L","M","X","J","V","S","D"].map(x=>`<div class="dh">${x}</div>`).join("")}${cells}</div></div>
+   <div class="card" style="margin-top:14px">${S.day?`<h2 style="margin-top:0">${esc(S.day)}</h2>
+   ${dayEv.map(e=>{const cl=S.clients.find(c=>c.id===e.clientId);return `<div class="bar" style="margin-bottom:6px"><span>${KI[e.kind]||"🕒"} ${esc(e.time)} — <b>${esc(e.title)}</b>${cl?` <small class="mut">(${esc(cl.name)})</small>`:""}</span><span><button data-i="${esc(e.id)}" title="Añadir al Calendario del iPhone">📲</button> <button class="d" data-x="${esc(e.id)}">Borrar</button></span></div>`}).join("")||`<div class="mut" style="margin-bottom:8px">Sin eventos este día.</div>`}
+   <div class="f"><div><label>Título</label><input id="et" placeholder="Ej.: Visita piso C/ Betis 12"></div><div><label>Tipo</label><select id="ek"><option value="c">Visita a inmueble</option><option value="l">Llamada</option><option value="f">Firma / notaría</option><option value="r">Recordatorio</option></select></div><div><label>Hora</label><input id="eh" type="time" value="10:00"></div>
+   <div><label>Cliente (opcional)</label><select id="ec"><option value="">— Ninguno —</option>${S.clients.map(c=>`<option value="${esc(c.id)}">${esc(c.name)}</option>`).join("")}</select></div></div>
+   <button class="p" id="ae">Añadir al calendario</button>`:`<div class="empty">Pulsa un día para ver o añadir eventos.</div>`}</div>`;
+  $("#pv").onclick=()=>{S.month=new Date(y,m-1,1);render();};
+  $("#nx").onclick=()=>{S.month=new Date(y,m+1,1);render();};
+  document.querySelectorAll(".day").forEach(e=>e.onclick=()=>{S.day=e.dataset.d;render();});
+  document.querySelectorAll("[data-x]").forEach(b=>b.onclick=()=>del("events",b.dataset.x));
+  document.querySelectorAll("[data-i]").forEach(b=>b.onclick=()=>ics(b.dataset.i));
+  if($("#ae"))$("#ae").onclick=async()=>{
+    const t=$("#et").value.trim();if(!t){alert("Pon un título.");return;}
+    await save("events",{id:uid(),title:t,time:$("#eh").value||"00:00",date:S.day,clientId:$("#ec").value,kind:$("#ek").value,done:false});
+  };
+}
+
+const PS={disponible:"Disponible",reservado:"Reservado",cerrado:"Vendido / alquilado"};
+const lc=s=>String(s||"").trim().toLowerCase();
+const num=s=>parseFloat(String(s||"").replace(/[^\d.,]/g,"").replace(/\./g,"").replace(",","."))||0;
+function direct(c,p){return !!lc(c.ref)&&lc(c.ref)===lc(p.ref);}
+function match(c,p){
+  if(["cerrado","perdido"].includes(c.status)||(p.state||"disponible")!=="disponible")return false;
+  const t=c.tipo||"comprador";
+  if(p.op==="alquiler"?t!=="inquilino":!(t==="comprador"||t==="inversor"))return false;
+  let n=0;
+  if(lc(c.zona)&&lc(p.zona)){if(!(lc(p.zona).includes(lc(c.zona))||lc(c.zona).includes(lc(p.zona))))return false;n++;}
+  if(num(c.presu)&&num(p.price)){if(num(c.presu)<num(p.price))return false;n++;}
+  return n>0;
+}
+function renderProps(){
+  const q=lc(S.pq);
+  const list=S.props.filter(p=>(!S.ps||(p.state||"disponible")===S.ps)&&lc([p.ref,p.addr,p.zona,p.notes].join(" ")).includes(q)).sort((a,b)=>(a.ref||"").localeCompare(b.ref||""));
+  const p=S.newP?{id:uid(),ref:"",addr:"",zona:"",op:"venta",price:"",state:"disponible",hab:"",m2:"",ownerId:"",notes:""}:S.props.find(x=>x.id===S.pv);
+  const cl=c=>`<div class="item" data-gc="${esc(c.id)}"><b>${esc(c.name)}</b><span class="bg">${ST[c.status]||ST.nuevo}</span><br><small>${esc(TP[c.tipo]||"")}${c.zona?" · "+esc(c.zona):""}${c.presu?" · "+esc(c.presu)+" €":""}</small></div>`;
+  let det=`<div class="empty">Selecciona un inmueble o crea uno nuevo.</div>`;
+  if(p){
+    const dir=S.clients.filter(c=>direct(c,p)),pos=S.clients.filter(c=>match(c,p)&&!direct(c,p));
+    det=`<div class="f">
+     <div><label>Referencia</label><input id="pr" value="${esc(p.ref)}"></div>
+     <div><label>Dirección</label><input id="pa" value="${esc(p.addr)}"></div>
+     <div><label>Zona / barrio</label><input id="pz" value="${esc(p.zona)}"></div>
+     <div><label>Operación</label><select id="po"><option value="venta" ${p.op==="venta"?"selected":""}>Venta</option><option value="alquiler" ${p.op==="alquiler"?"selected":""}>Alquiler</option></select></div>
+     <div><label>Precio (€)</label><input id="pp" inputmode="numeric" value="${esc(p.price)}"></div>
+     <div><label>Estado</label><select id="pst">${Object.entries(PS).map(([k,v])=>`<option value="${k}" ${(p.state||"disponible")===k?"selected":""}>${v}</option>`).join("")}</select></div>
+     <div><label>Habitaciones</label><input id="ph" inputmode="numeric" value="${esc(p.hab)}"></div>
+     <div><label>m²</label><input id="pm" inputmode="numeric" value="${esc(p.m2)}"></div>
+     <div><label>Propietario</label><select id="pw"><option value="">— Ninguno —</option>${S.clients.map(c=>`<option value="${esc(c.id)}" ${p.ownerId===c.id?"selected":""}>${esc(c.name)}</option>`).join("")}</select></div></div>
+     <label>Notas</label><textarea id="pn">${esc(p.notes)}</textarea>
+     <div class="row" style="margin-top:10px"><button class="p" id="psv">${S.newP?"Crear inmueble":"Guardar cambios"}</button>${S.newP?"":`<button class="d" id="pdl">Eliminar</button>`}</div>
+     ${S.newP?"":`<h2>Clientes interesados (misma referencia)</h2>${dir.map(cl).join("")||`<div class="mut">Ninguno.</div>`}
+     <h2>Posibles ${p.op==="alquiler"?"inquilinos":"compradores"} (zona y presupuesto)</h2>${pos.map(cl).join("")||`<div class="mut">Sin coincidencias. Revisa zona y presupuesto en las fichas de clientes.</div>`}`}`;
+  }
+  $("#app").innerHTML=`<div class="grid"><div class="card"><div class="row"><input id="q" placeholder="Buscar referencia, dirección, zona…" value="${esc(S.pq)}"><button class="p" id="np">+ Nuevo</button></div>
+   <div class="row"><select id="pf"><option value="">Todos los estados</option>${Object.entries(PS).map(([k,v])=>`<option value="${k}" ${S.ps===k?"selected":""}>${v}</option>`).join("")}</select></div>
+   ${list.length?list.map(x=>`<div class="item ${x.id===S.pv&&!S.newP?"sel":""}" data-p="${esc(x.id)}"><b>${esc(x.ref||x.addr||"Sin referencia")}</b><span class="bg">${PS[x.state||"disponible"]}</span><br><small>${esc(x.addr)}</small><br><small>${x.op==="alquiler"?"Alquiler":"Venta"}${x.price?" · "+esc(x.price)+" €":""}${x.zona?" · "+esc(x.zona):""}</small></div>`).join(""):`<div class="empty">${S.props.length?"Sin resultados.":"Aún no hay inmuebles. Pulsa «+ Nuevo»."}</div>`}</div>
+   <div class="card">${det}</div></div>`;
+  $("#q").oninput=e=>{S.pq=e.target.value;render();};
+  $("#pf").onchange=e=>{S.ps=e.target.value;render();};
+  $("#np").onclick=()=>{S.newP=true;S.pv=null;render();};
+  document.querySelectorAll("[data-p]").forEach(e=>e.onclick=()=>{S.pv=e.dataset.p;S.newP=false;render();});
+  document.querySelectorAll("[data-gc]").forEach(e=>e.onclick=()=>{S.view="c";S.sel=e.dataset.gc;S.newC=false;render();});
+  if($("#psv"))$("#psv").onclick=async()=>{
+    const r=$("#pr").value.trim(),a=$("#pa").value.trim();if(!r&&!a){alert("Indica referencia o dirección.");return;}
+    const item={...p,ref:r,addr:a,zona:$("#pz").value.trim(),op:$("#po").value,price:$("#pp").value.trim(),state:$("#pst").value,hab:$("#ph").value.trim(),m2:$("#pm").value.trim(),ownerId:$("#pw").value,notes:$("#pn").value};
+    S.pv=item.id;S.newP=false;await save("props",item);
+  };
+  if($("#pdl"))$("#pdl").onclick=async()=>{if(confirm("¿Eliminar este inmueble?")){const id=p.id;S.pv=null;await del("props",id);}};
+}
+function renderRem(){
+  const today=iso(new Date()),lim=new Date();lim.setDate(lim.getDate()+7);const L=iso(lim);
+  const items=S.events.filter(e=>!e.done&&e.date<=L).sort((a,b)=>(a.date+a.time).localeCompare(b.date+b.time));
+  $("#app").innerHTML=`<div class="card"><h2 style="margin-top:0">Pendientes: atrasados y próximos 7 días</h2>${items.map(e=>{const cl=S.clients.find(c=>c.id===e.clientId);const late=e.date<today;return `<div class="bar" style="margin-bottom:10px"><span>${KI[e.kind]||"🕒"} <b>${esc(e.title)}</b>${cl?` <small class="mut">(${esc(cl.name)})</small>`:""}<br><small class="${late?"late":"mut"}">${late?"Atrasado · ":e.date===today?"Hoy · ":""}${esc(e.date)} ${esc(e.time)}</small></span><button data-ok="${esc(e.id)}">✓ Hecho</button></div>`}).join("")||`<div class="empty">Todo al día 🎉</div>`}</div>`;
+  document.querySelectorAll("[data-ok]").forEach(b=>b.onclick=()=>{const e=S.events.find(x=>x.id===b.dataset.ok);if(e)save("events",{...e,done:true});});
+}
+async function ics(id){
+  const e=S.events.find(x=>x.id===id);if(!e)return;
+  const q=s=>String(s).replace(/[\\;,]/g,"\\$&").replace(/\n/g," ");
+  const txt=["BEGIN:VCALENDAR","VERSION:2.0","PRODID:-//Agenda//ES","BEGIN:VEVENT","UID:"+id+"@agenda","DTSTAMP:"+new Date().toISOString().replace(/[-:]/g,"").slice(0,15)+"Z","DTSTART:"+e.date.replace(/-/g,"")+"T"+(e.time||"00:00").replace(":","")+"00","SUMMARY:"+q(e.title),"BEGIN:VALARM","ACTION:DISPLAY","DESCRIPTION:"+q(e.title),"TRIGGER:-PT30M","END:VALARM","END:VEVENT","END:VCALENDAR"].join("\r\n");
+  try{const a=document.createElement("a");a.href=URL.createObjectURL(new Blob([txt],{type:"text/calendar"}));a.download="evento.ics";document.body.appendChild(a);a.click();a.remove();}catch(x){if(x&&x.code!=="dismissed")alert("No se pudo exportar el evento.");}
+}
+$("#tr").onclick=()=>{S.view="r";render();};
+$("#tp").onclick=()=>{S.view="p";render();};
+$("#tc").onclick=()=>{S.view="c";render();};
+$("#tk").onclick=()=>{S.view="k";render();};
+render();
+$("#bx").onclick=()=>{const a=document.createElement("a");a.href=URL.createObjectURL(new Blob([JSON.stringify({clients:S.clients,events:S.events,props:S.props},null,1)],{type:"application/json"}));a.download="agenda-copia-"+iso(new Date())+".json";document.body.appendChild(a);a.click();a.remove();};
+$("#bi").onclick=()=>$("#bf").click();
+$("#bf").onchange=async e=>{const f=e.target.files[0];if(!f)return;try{const d=JSON.parse(await f.text());if(!confirm("Esto reemplaza los datos actuales. \u00bfContinuar?"))return;S.clients=d.clients||[];S.events=d.events||[];S.props=d.props||[];persist();render();}catch(x){alert("Archivo no v\u00e1lido.");}e.target.value="";};
+load();render();
+</script>
+</body>
+</html>
